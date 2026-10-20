@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <circle cx="50" cy="50" r="45" fill="#FAF7F2" stroke="#8B9E8B" stroke-width="3"/>
+  <text x="50" y="42" text-anchor="middle" font-family="serif" font-size="18" font-weight="600" fill="#5C4033">Loop</text>
+  <text x="50" y="56" text-anchor="middle" font-family="serif" font-size="10" fill="#D4A0A0">&amp;</text>
+  <text x="50" y="70" text-anchor="middle" font-family="serif" font-size="18" font-weight="600" fill="#5C4033">Bloom</text>
+</svg>
