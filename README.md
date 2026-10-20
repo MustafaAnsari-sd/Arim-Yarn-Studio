@@ -73,7 +73,8 @@ loop-and-bloom/
 1. **Add product photos** to `public/images/products/`.
 2. **Edit** `src/data/products.js` — update the sample entries with your real product names, prices, descriptions and image paths.
 3. **WhatsApp** is configured in `src/data/siteConfig.js` (`whatsappNumber`, display number, and prefilled messages). Update there if your business number changes.
-4. **Delivery areas** are listed in `siteConfig.deliveryAreas` — adjust when you expand delivery.
+4. **Instagram** is set in `siteConfig.instagram` (`handle` and `url`).
+5. **Delivery areas** are listed in `siteConfig.deliveryAreas` — currently Andheri, Jogeshwari, Malad, Bandra, Khar, Santacruz and Dharavi.
 
 ---
 

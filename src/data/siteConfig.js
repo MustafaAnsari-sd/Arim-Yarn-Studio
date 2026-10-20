@@ -1,10 +1,10 @@
 /**
- * Site-wide configuration — Loop & Bloom
+ * Site-wide configuration — Arim Yarn Studio
  */
 
 const siteConfig = {
-  brandName: 'Loop & Bloom',
-  tagline: 'Handmade Crochet Creations',
+  brandName: 'Arim Yarn Studio',
+  tagline: 'Handcrafted Crochet Creations',
   description:
     'Unique handmade crochet products crafted with love in India — bags, accessories, home décor and heartfelt gifts.',
 
@@ -15,12 +15,25 @@ const siteConfig = {
 
   whatsappMessages: {
     general:
-      "Hi Loop & Bloom! I'm interested in your handmade crochet products. Could you please share more details?",
+      "Hi Arim Yarn Studio! I'm interested in your handmade crochet products. Could you please share more details?",
     customOrder:
-      "Hi Loop & Bloom! I'd like to enquire about a custom crochet order. Could you share what options are available?",
+      "Hi Arim Yarn Studio! I'd like to enquire about a custom crochet order. Could you share what options are available?",
   },
 
-  deliveryAreas: ['Andheri', 'Malad', 'Jogeshwari, Mumbai'],
+  instagram: {
+    handle: 'arim_yarn_studio2163',
+    url: 'https://www.instagram.com/arim_yarn_studio2163',
+  },
+
+  deliveryAreas: [
+    'Andheri',
+    'Jogeshwari',
+    'Malad',
+    'Bandra',
+    'Khar',
+    'Santacruz',
+    'Dharavi',
+  ],
 
   currency: {
     code: 'INR',

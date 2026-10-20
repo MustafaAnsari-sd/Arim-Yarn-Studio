@@ -1,108 +1,180 @@
 /**
- * Product Data — Loop & Bloom
- *
- * This is the centralized data source for all products.
- * Replace sample entries with real product information.
- *
- * Each product has:
- *  - id          : unique string identifier
- *  - name        : product display name
- *  - price       : price in INR (number)
- *  - category    : one of the defined CATEGORIES
- *  - description : short product description
- *  - image       : path relative to public/ (e.g. "/images/products/my-bag.jpg")
- *  - badge       : optional label like "New", "Bestseller" etc.
+ * Product Data — Arim Yarn Studio
+ * All prices: ₹79
  */
 
 export const CATEGORIES = [
   'All',
-  'Bags & Purses',
+  'Keychains',
+  'Hair Accessories',
+  'Bookmarks',
   'Home Décor',
-  'Accessories',
-  'Gifts',
-  'Baby & Kids',
+  'Charms & Clips',
 ];
 
 const products = [
+  // ── Keychains ──────────────────────────────────────────────
   {
     id: 'prod-001',
-    name: 'Sample Crochet Tote Bag',
-    price: 1299,
-    category: 'Bags & Purses',
+    name: 'Crochet Bow Keychain',
+    price: 79,
+    category: 'Keychains',
     description:
-      'A beautifully handcrafted crochet tote bag, perfect for everyday use. Made with premium cotton yarn.',
-    image: '/images/products/sample-tote-bag.jpg',
-    badge: 'Sample',
+      'Vibrant handcrafted crochet bow keychains in bold, cheerful colours. A perfect gift or a fun pop of colour for your everyday carry.',
+    image: '/images/products/bow-keychain.jpg',
+    badge: 'Popular',
+    colors: ['Red', 'Navy Blue', 'Yellow', 'Sky Blue', 'Pink'],
   },
   {
     id: 'prod-002',
-    name: 'Sample Granny Square Cushion Cover',
-    price: 899,
-    category: 'Home Décor',
+    name: 'Macaron Crochet Keychain',
+    price: 79,
+    category: 'Keychains',
     description:
-      'Classic granny-square cushion cover in warm, earthy tones. Adds a handmade touch to any room.',
-    image: '/images/products/sample-cushion-cover.jpg',
-    badge: 'Sample',
+      'Sweet handmade macaron keychains crocheted in soft pastel shades. A charming bag accessory that looks good enough to eat!',
+    image: '/images/products/macaron-keychain.jpg',
+    badge: 'New',
+    colors: ['Peach', 'Cream', 'Pink', 'Black & White'],
   },
   {
     id: 'prod-003',
-    name: 'Sample Crochet Scrunchie Set',
-    price: 349,
-    category: 'Accessories',
+    name: 'Pink Cherry Keychain',
+    price: 79,
+    category: 'Keychains',
     description:
-      'Set of three hand-crocheted scrunchies in pastel colours. Gentle on hair, gorgeous to wear.',
-    image: '/images/products/sample-scrunchie-set.jpg',
-    badge: 'Sample',
+      'Adorable crochet cherry keychain with delicate green leaves. Looks stunning clipped to your bag or backpack.',
+    image: '/images/products/prod_1.jpg',
+    badge: 'Cute Pick',
+    colors: ['Pink', 'Red'],
   },
   {
     id: 'prod-004',
-    name: 'Sample Amigurumi Bunny',
-    price: 749,
-    category: 'Gifts',
+    name: 'Dark Cherry Keychain',
+    price: 79,
+    category: 'Keychains',
     description:
-      'An adorable hand-crocheted amigurumi bunny. A thoughtful, one-of-a-kind gift for any occasion.',
-    image: '/images/products/sample-amigurumi-bunny.jpg',
-    badge: 'Sample',
+      'Rich, deep-red crochet cherry keychain with looped green stem. A classic fruity charm full of handmade character.',
+    image: '/images/products/prod_2.jpg',
+    badge: null,
+    colors: ['Deep Red', 'Pink'],
   },
   {
     id: 'prod-005',
-    name: 'Sample Baby Booties',
-    price: 499,
-    category: 'Baby & Kids',
+    name: 'Crochet Flower Keychain',
+    price: 79,
+    category: 'Keychains',
     description:
-      'Soft crochet baby booties in gentle pastels. Handmade with baby-safe yarn for delicate little feet.',
-    image: '/images/products/sample-baby-booties.jpg',
-    badge: 'Sample',
+      'Plush puffy flower keychains in a rainbow of colours — purple, pink, yellow, black, blue, green, white & more. Pick your favourite!',
+    image: '/images/products/prod_3.jpg',
+    badge: 'Bestseller',
+    colors: ['Purple', 'Pink', 'Yellow', 'Black', 'Blue', 'Green', 'White', 'Lavender'],
   },
   {
     id: 'prod-006',
-    name: 'Sample Macramé Wall Hanging',
-    price: 1599,
-    category: 'Home Décor',
+    name: 'Triple Heart Keychain',
+    price: 79,
+    category: 'Keychains',
     description:
-      'An elegant macramé-style wall hanging with crochet detailing. A statement piece for your wall.',
-    image: '/images/products/sample-wall-hanging.jpg',
-    badge: 'Sample',
+      'Three stacked crochet hearts dangling from a single keyring — a sweet, romantic accessory for your keys or bag.',
+    image: '/images/products/prod_9.jpeg',
+    badge: 'Gift Idea',
+    colors: ['White + Teal + Blue', 'Custom colours available'],
   },
+
+  // ── Hair Accessories ───────────────────────────────────────
   {
     id: 'prod-007',
-    name: 'Sample Crochet Crossbody Bag',
-    price: 1099,
-    category: 'Bags & Purses',
+    name: 'Crochet Bow Hair Clips',
+    price: 79,
+    category: 'Hair Accessories',
     description:
-      'A chic crossbody bag with adjustable strap and button closure. Handmade with durable cotton yarn.',
-    image: '/images/products/sample-crossbody-bag.jpg',
-    badge: 'Sample',
+      'Adorable handcrafted crochet bow hair clips — lightweight, colourful and perfect for everyday wear. Available in a full rainbow of shades.',
+    image: '/images/products/bow-hair-clips.jpg',
+    badge: 'Bestseller',
+    colors: ['Pink', 'Purple', 'Yellow', 'Green', 'Blue'],
   },
   {
     id: 'prod-008',
-    name: 'Sample Crochet Coaster Set',
-    price: 399,
+    name: 'Daisy Hair Clips',
+    price: 79,
+    category: 'Hair Accessories',
+    description:
+      'Pretty white daisy crochet hair clips with a soft yellow centre. Comes as a pair — delicate, feminine and effortlessly stylish.',
+    image: '/images/products/prod_12.jpg',
+    badge: 'New',
+    colors: ['White & Yellow'],
+  },
+
+  // ── Bookmarks ──────────────────────────────────────────────
+  {
+    id: 'prod-009',
+    name: 'Flower Bookmark',
+    price: 79,
+    category: 'Bookmarks',
+    description:
+      'A beautiful crochet flower bookmark with a long stem and a tiny leaf at the bottom. The prettiest way to keep your place in a book.',
+    image: '/images/products/prod_4.jpg',
+    badge: 'Book Lover',
+    colors: ['Pink', 'Yellow', 'Blue', 'Red', 'Purple'],
+  },
+  {
+    id: 'prod-010',
+    name: 'Flower Bookmark Set',
+    price: 79,
+    category: 'Bookmarks',
+    description:
+      'A set of 5 vibrant crochet flower bookmarks — each a different colour with a delicate stem and leaf. Perfect for gifting or keeping one of each!',
+    image: '/images/products/prod_10.jpg',
+    badge: 'Gift Set',
+    colors: ['Lavender', 'Yellow', 'Pink', 'Red', 'Blue'],
+  },
+  {
+    id: 'prod-011',
+    name: 'Butterfly Flower Bookmark',
+    price: 79,
+    category: 'Bookmarks',
+    description:
+      'An elegant white crochet flower bookmark with a graceful curling stem. Soft, beautiful and made with attention to every detail.',
+    image: '/images/products/prod_11.jpg',
+    badge: null,
+    colors: ['White', 'Pink', 'Custom'],
+  },
+
+  // ── Charms & Clips ─────────────────────────────────────────
+  {
+    id: 'prod-012',
+    name: 'Heart Phone Charm',
+    price: 79,
+    category: 'Charms & Clips',
+    description:
+      'A sweet crochet heart charm with a phone strap loop — attach it to your phone, bag zip or keys. Deep red with a crisp white border.',
+    image: '/images/products/prod_6.jpg',
+    badge: 'New',
+    colors: ['Red & White', 'Custom colours available'],
+  },
+  {
+    id: 'prod-013',
+    name: 'Flower Wristlet Strap',
+    price: 79,
+    category: 'Charms & Clips',
+    description:
+      'A handcrafted crochet wristlet strap with a cute flower charm in the centre. Attach to your bag, water bottle or use as a keychain lanyard.',
+    image: '/images/products/prod_8.jpg',
+    badge: null,
+    colors: ['Beige & Yellow', 'Beige & White'],
+  },
+
+  // ── Home Décor ─────────────────────────────────────────────
+  {
+    id: 'prod-014',
+    name: 'Lily Pad Coasters',
+    price: 79,
     category: 'Home Décor',
     description:
-      'Set of four hand-crocheted coasters in complementary colours. A charming addition to any table.',
-    image: '/images/products/sample-coaster-set.jpg',
-    badge: 'Sample',
+      'Charming crochet lily pad coasters in soft sage green with a tiny flower embellishment. A beautiful handmade touch for your tea table.',
+    image: '/images/products/prod_7.jpg',
+    badge: 'Home Fave',
+    colors: ['Sage Green'],
   },
 ];
 

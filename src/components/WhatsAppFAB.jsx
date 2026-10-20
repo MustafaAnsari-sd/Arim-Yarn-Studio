@@ -1,8 +1,6 @@
 import siteConfig, { getWhatsAppUrl } from '../data/siteConfig';
+import { WhatsAppIcon } from './SocialIcons';
 
-/**
- * WhatsApp floating action button.
- */
 function WhatsAppFAB() {
   if (!siteConfig.whatsappNumber) return null;
 
@@ -17,7 +15,7 @@ function WhatsAppFAB() {
       aria-label="Chat on WhatsApp"
       id="whatsapp-fab"
     >
-      💬
+      <WhatsAppIcon size={28} />
     </a>
   );
 }

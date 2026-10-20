@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import products from '../data/products';
 
+const LOGO_SRC = '/images/logo.png';
+
 function Home() {
   // Show first 4 products as featured
   const featured = products.slice(0, 4);
@@ -14,6 +16,7 @@ function Home() {
         <span className="hero__decor hero__decor--right">🪡</span>
 
         <div className="hero__content">
+          <img src={LOGO_SRC} alt="Arim Yarn Studio" className="hero__logo-watermark" />
           <span className="hero__badge animate-fade-in">✦ Handmade in India</span>
           <h1 className="animate-fade-in-up">
             Crochet Creations<br />
@@ -61,9 +64,9 @@ function Home() {
             </div>
             <div className="features-strip__item">
               <span className="features-strip__icon">📦</span>
-              <h4 className="features-strip__title">Pan-India Delivery</h4>
+              <h4 className="features-strip__title">Mumbai Delivery</h4>
               <p className="features-strip__text">
-                We ship across India with love and careful packaging.
+                Currently delivering across Andheri, Bandra, Malad, Santacruz and nearby areas.
               </p>
             </div>
           </div>
@@ -101,22 +104,41 @@ function Home() {
       <section className="section section--cream" id="about-preview">
         <div className="container">
           <div className="about-preview">
-            <div className="about-preview__visual">
-              <span className="about-preview__visual-text">
-                Your behind-the-scenes photo will go here
-              </span>
+            <div className="about-preview__visual-alt animate-fade-in-up">
+              <div className="about-preview__visual-inner">
+                <div className="about-preview__yarn-icon">🧶</div>
+                <div className="about-preview__mini-stats">
+                  <div className="about-preview__mini-stat">
+                    <span className="about-preview__mini-num">4+</span>
+                    <span className="about-preview__mini-label">Years of Craft</span>
+                  </div>
+                  <div className="about-preview__mini-stat">
+                    <span className="about-preview__mini-num">100%</span>
+                    <span className="about-preview__mini-label">Handmade</span>
+                  </div>
+                  <div className="about-preview__mini-stat">
+                    <span className="about-preview__mini-num">∞</span>
+                    <span className="about-preview__mini-label">Custom Options</span>
+                  </div>
+                  <div className="about-preview__mini-stat">
+                    <span className="about-preview__mini-num">❤️</span>
+                    <span className="about-preview__mini-label">Made with Love</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="about-preview__content">
+            <div className="about-preview__content animate-fade-in-up delay-1">
               <span className="section-subtitle">Our Story</span>
               <h2>Handmade, Heartfelt, Homegrown</h2>
               <p>
-                Loop & Bloom was born from a passion for crochet and a belief that
+                Arim Yarn Studio was born from a passion for crochet and a belief that
                 handmade things carry a special kind of magic. Every product in our
                 collection is crafted by hand in India — no machines, no shortcuts.
               </p>
               <p>
-                We pour love into every loop and bloom, creating pieces that are
-                as unique as the people who carry them.
+                With <strong>4+ years of experience</strong>, we pour love into every
+                loop and stitch, creating pieces that are as unique as the people who
+                carry them.
               </p>
               <Link to="/about" className="btn btn--primary" style={{ marginTop: '0.5rem' }}>
                 Learn More About Us

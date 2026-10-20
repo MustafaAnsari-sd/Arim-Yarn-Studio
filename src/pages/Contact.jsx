@@ -1,62 +1,102 @@
 import siteConfig, { getWhatsAppUrl } from '../data/siteConfig';
+import { InstagramIcon, WhatsAppIcon } from '../components/SocialIcons';
 
 function Contact() {
   const generalWhatsAppUrl = getWhatsAppUrl(siteConfig.whatsappMessages.general);
   const customOrderWhatsAppUrl = getWhatsAppUrl(siteConfig.whatsappMessages.customOrder);
+  const instagramUrl = siteConfig.instagram.url;
+  const instagramHandle = `@${siteConfig.instagram.handle}`;
 
   return (
     <>
-      {/* ── Hero ── */}
       <section className="contact-hero" id="contact-hero">
         <div className="container">
           <span className="section-subtitle">Say Hello</span>
           <h1>Get in Touch</h1>
           <p>
-            Have a question about our handmade crochet pieces, delivery in Mumbai,
-            or a custom idea? Message us on WhatsApp — we&apos;re happy to help.
+            Questions about our handmade crochet pieces, custom ideas, or delivery
+            in Mumbai? Reach us on WhatsApp or follow along on Instagram.
           </p>
+          <div className="contact-hero__actions">
+            <a
+              href={generalWhatsAppUrl}
+              className="social-btn social-btn--whatsapp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <WhatsAppIcon size={22} />
+              Chat on WhatsApp
+            </a>
+            <a
+              href={instagramUrl}
+              className="social-btn social-btn--instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <InstagramIcon size={22} />
+              Follow on Instagram
+            </a>
+          </div>
         </div>
       </section>
 
-      {/* ── Contact Grid ── */}
       <section className="section" id="contact-section">
         <div className="container">
           <div className="contact-grid">
-            {/* WhatsApp enquiry */}
-            <div className="contact-enquiry animate-fade-in-up" id="contact-whatsapp-enquiry">
-              <h3>Message Us on WhatsApp</h3>
+            <div className="contact-enquiry animate-fade-in-up" id="contact-channels">
+              <h3>Connect With Us</h3>
               <p className="contact-enquiry__lead">
-                For product details, availability, custom orders, and delivery enquiries,
-                reach us directly on WhatsApp. We&apos;ll reply as soon as we can.
+                WhatsApp is the fastest way to ask about products, availability,
+                custom orders and delivery. Instagram is where we share new
+                creations and behind-the-scenes stitches.
               </p>
-              <ul className="contact-enquiry__list">
-                <li>Product questions and recommendations</li>
-                <li>Stock and availability</li>
-                <li>Custom colour, size, and style enquiries</li>
-                <li>Delivery within our Mumbai areas</li>
-              </ul>
+
               <a
                 href={generalWhatsAppUrl}
-                className="btn btn--primary btn--whatsapp-cta"
+                className="channel-card channel-card--whatsapp"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Chat on WhatsApp
+                <span className="channel-card__icon">
+                  <WhatsAppIcon size={26} />
+                </span>
+                <span className="channel-card__body">
+                  <span className="channel-card__label">WhatsApp</span>
+                  <span className="channel-card__value">
+                    {siteConfig.whatsappDisplayNumber}
+                  </span>
+                  <span className="channel-card__hint">
+                    Opens a draft message — tap Send in WhatsApp when you are ready.
+                  </span>
+                </span>
               </a>
-              <p className="contact-enquiry__note">
-                Opens WhatsApp with a draft message — tap <strong>Send</strong> in the app
-                when you&apos;re ready. Your message is not sent until you do.
-              </p>
+
+              <a
+                href={instagramUrl}
+                className="channel-card channel-card--instagram"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="channel-card__icon">
+                  <InstagramIcon size={26} />
+                </span>
+                <span className="channel-card__body">
+                  <span className="channel-card__label">Instagram</span>
+                  <span className="channel-card__value">{instagramHandle}</span>
+                  <span className="channel-card__hint">
+                    Follow for new pieces, colour stories and studio updates.
+                  </span>
+                </span>
+              </a>
             </div>
 
-            {/* Info cards */}
             <div className="contact-info-cards animate-fade-in-up delay-1">
               <div className="contact-info-card" id="info-delivery">
                 <div className="contact-info-card__icon">📍</div>
                 <div>
                   <h4>Our Delivery Areas</h4>
                   <p>
-                    Delivery is currently limited to the following areas in Mumbai:
+                    Delivery is currently limited to these Mumbai neighbourhoods:
                   </p>
                   <ul className="delivery-areas-list">
                     {siteConfig.deliveryAreas.map((area) => (
@@ -75,35 +115,17 @@ function Contact() {
                   <h4>Custom Orders</h4>
                   <p>
                     Looking for something special? Enquire on WhatsApp about colours,
-                    sizes, and styles — we&apos;ll let you know what we can make for you.
+                    sizes and styles — we will let you know what we can make for you.
                   </p>
                   <a
                     href={customOrderWhatsAppUrl}
-                    className="btn btn--sm btn--primary"
+                    className="btn btn--sm btn--primary social-btn--inline"
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{ marginTop: 'var(--space-sm)' }}
                   >
+                    <WhatsAppIcon size={16} />
                     Enquire on WhatsApp
                   </a>
-                </div>
-              </div>
-
-              <div className="contact-info-card" id="info-whatsapp">
-                <div className="contact-info-card__icon">💬</div>
-                <div>
-                  <h4>WhatsApp</h4>
-                  <p>
-                    Our main way to connect for orders and questions:{' '}
-                    <a
-                      href={generalWhatsAppUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="contact-info-card__link"
-                    >
-                      {siteConfig.whatsappDisplayNumber}
-                    </a>
-                  </p>
                 </div>
               </div>
             </div>

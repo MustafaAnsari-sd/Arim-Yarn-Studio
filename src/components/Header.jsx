@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
+const LOGO_SRC = '/images/logo.png';
+
 function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -11,10 +13,8 @@ function Header() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Close menu on route change
   const handleNavClick = () => setMenuOpen(false);
 
-  // Prevent body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
@@ -24,7 +24,7 @@ function Header() {
     <header className={`header${scrolled ? ' header--scrolled' : ''}`}>
       <div className="header__inner">
         <Link to="/" className="header__logo" onClick={handleNavClick}>
-          Loop <span>&</span> Bloom
+          <img src={LOGO_SRC} alt="Arim Yarn Studio" className="header__logo-img" />
         </Link>
 
         {/* Desktop navigation */}
@@ -51,6 +51,9 @@ function Header() {
 
       {/* Mobile menu overlay */}
       <nav className={`mobile-menu${menuOpen ? ' mobile-menu--open' : ''}`} id="mobile-menu">
+        <div className="mobile-menu__logo">
+          <img src={LOGO_SRC} alt="Arim Yarn Studio" className="mobile-menu__logo-img" />
+        </div>
         <NavLink to="/" end onClick={handleNavClick}>Home</NavLink>
         <NavLink to="/shop" onClick={handleNavClick}>Shop</NavLink>
         <NavLink to="/about" onClick={handleNavClick}>About</NavLink>
