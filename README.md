@@ -1,4 +1,4 @@
-# 🧶 Loop & Bloom — Handmade Crochet Boutique
+# 🧶 Arim Yarn Studio — Handmade Crochet Boutique
 
 A premium boutique website for **Loop & Bloom**, a handmade crochet business based in India.
 
