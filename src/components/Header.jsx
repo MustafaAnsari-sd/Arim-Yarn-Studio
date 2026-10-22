@@ -62,7 +62,7 @@ function Header() {
             <NavLink to="/contact" onClick={handleNavClick} className="mobile-menu__link">Contact</NavLink>
           </div>
           <div className="mobile-menu__footer">
-            <span>✦ Handmade in India</span>
+            <span>✦ Handmade in India ✦</span>
           </div>
         </nav>
       )}
