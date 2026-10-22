@@ -458,7 +458,8 @@ button {
   gap: 5px;
   padding: 6px;
   cursor: pointer;
-  z-index: 1001;
+  z-index: 1100;
+  position: relative;
 }
 
 .header__hamburger span {
@@ -490,7 +491,7 @@ button {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 999;
+  z-index: 1050;
   background-color: rgba(253, 248, 243, 0.98);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
@@ -2490,9 +2491,14 @@ button {
     display: flex;
   }
 
+  /* Header inner - reduce side padding on mobile */
+  .header__inner {
+    padding: 0 var(--space-md);
+  }
+
   /* Header logo optimal size on tablet */
   .header__logo-img {
-    width: 140px;
+    width: 110px;
   }
 
   .hero {
@@ -2569,9 +2575,13 @@ button {
     width: 180px;
   }
 
-  /* Header logo optimal size on small mobile - readable but not huge */
+  /* Header - tighter spacing and smaller logo on small mobile */
+  .header__inner {
+    padding: 0 var(--space-sm);
+  }
+
   .header__logo-img {
-    width: 120px;
+    width: 95px;
   }
 
   .hero h1 {
@@ -2692,14 +2702,14 @@ button {
     display: none;
   }
 
-  /* Mobile menu - clean professional spacing */
+  /* Mobile menu - clean professional spacing with visible links */
   .mobile-menu {
     padding-top: var(--space-2xl);
   }
 
   .mobile-menu__link {
-    font-size: 1.4rem;
-    padding: var(--space-sm) 0;
+    font-size: 1.5rem;
+    padding: var(--space-md) 0;
   }
 
   .mobile-menu__links {
