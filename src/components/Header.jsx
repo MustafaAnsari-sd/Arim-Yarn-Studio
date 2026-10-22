@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
-const LOGO_SRC = '/images/logo.png';
+const LOGO_SRC = '/images/logo-header.svg';
 
 function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -53,20 +53,26 @@ function Header() {
 
       {/* Mobile menu overlay - OUTSIDE header */}
       {menuOpen && (
-        <nav className="mobile-menu mobile-menu--open" id="mobile-menu">
-          <Link to="/" className="mobile-menu__logo-link" onClick={handleNavClick}>
-            <img src={LOGO_SRC} alt="Arim Yarn Studio" className="mobile-menu__logo-img" />
-          </Link>
-          <div className="mobile-menu__links">
-            <NavLink to="/" end onClick={handleNavClick} className="mobile-menu__link">Home</NavLink>
-            <NavLink to="/shop" onClick={handleNavClick} className="mobile-menu__link">Shop</NavLink>
-            <NavLink to="/about" onClick={handleNavClick} className="mobile-menu__link">About</NavLink>
-            <NavLink to="/contact" onClick={handleNavClick} className="mobile-menu__link">Contact</NavLink>
-          </div>
-          <div className="mobile-menu__footer">
-            <span>✦ Handmade in India ✦</span>
-          </div>
-        </nav>
+        <>
+          {/* Backdrop - separate element */}
+          <div className="mobile-menu-backdrop" onClick={handleNavClick} aria-hidden="true" />
+          
+          {/* Menu drawer */}
+          <nav className="mobile-menu" id="mobile-menu">
+            <Link to="/" className="mobile-menu__logo-link" onClick={handleNavClick}>
+              <img src={LOGO_SRC} alt="Arim Yarn Studio" className="mobile-menu__logo-img" />
+            </Link>
+            <div className="mobile-menu__links">
+              <NavLink to="/" end onClick={handleNavClick} className="mobile-menu__link">Home</NavLink>
+              <NavLink to="/shop" onClick={handleNavClick} className="mobile-menu__link">Shop</NavLink>
+              <NavLink to="/about" onClick={handleNavClick} className="mobile-menu__link">About</NavLink>
+              <NavLink to="/contact" onClick={handleNavClick} className="mobile-menu__link">Contact</NavLink>
+            </div>
+            <div className="mobile-menu__footer">
+              <span>✦ Handmade in India ✦</span>
+            </div>
+          </nav>
+        </>
       )}
     </>
   );

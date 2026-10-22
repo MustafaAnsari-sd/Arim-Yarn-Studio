@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 923" fill="none">
+  <!-- Yarn ball (dusty pink) -->
+  <circle cx="763" cy="240" r="48" fill="#D4A0A0"/>
+  <path d="M730 225 Q745 220 760 225 M725 240 Q745 235 765 240 M730 255 Q750 250 770 255" stroke="#C08888" stroke-width="3" fill="none" stroke-linecap="round"/>
+  
+  <!-- Thread from yarn ball (dusty pink) -->
+  <path d="M763 288 Q763 320 750 350 Q735 385 730 420 Q727 445 740 470 Q755 495 785 510 Q820 528 865 535 Q920 545 985 548 Q1050 550 1100 545" stroke="#D4A0A0" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <circle cx="1100" cy="545" r="12" fill="#D4A0A0"/>
+  
+  <!-- Main "Arim" text (warm brown #604237) -->
+  <g fill="#604237">
+    <!-- A -->
+    <path d="M410 260 L510 500 L470 500 L455 460 L365 460 L350 500 L310 500 L410 260 Z M410 320 L380 420 L440 420 L410 320 Z"/>
+    
+    <!-- r -->
+    <path d="M595 350 L595 500 L555 500 L555 380 Q555 360 540 360 Q525 360 515 375 L515 500 L475 500 L475 350 L515 350 L515 365 Q530 350 555 350 Q585 350 595 370 Z"/>
+    
+    <!-- i (with yarn ball above as the dot) -->
+    <path d="M755 360 L795 360 L795 500 L755 500 Z"/>
+    
+    <!-- m -->
+    <path d="M865 350 Q895 350 910 370 Q925 350 955 350 Q990 350 1000 375 L1000 500 L960 500 L960 385 Q960 370 945 370 Q930 370 920 385 L920 500 L880 500 L880 385 Q880 370 865 370 Q850 370 840 385 L840 500 L800 500 L800 350 L840 350 L840 365 Q855 350 865 350 Z"/>
+  </g>
+  
+  <!-- Decorative underline (dusty pink) -->
+  <path d="M425 545 Q600 520 800 530 Q1000 540 1100 545" stroke="#D4A0A0" stroke-width="5" fill="none" stroke-linecap="round"/>
+  
+  <!-- "YARN STUDIO" subtitle (dark brown) -->
+  <g fill="#5C4033" font-family="serif" font-size="48" letter-spacing="18" font-weight="400">
+    <text x="490" y="680" text-anchor="start">YARN STUDIO</text>
+  </g>
+</svg>
