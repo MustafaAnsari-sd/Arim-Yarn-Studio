@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1024 600" fill="none">
+  <!-- This SVG preserves the original Arim Yarn Studio logo design -->
+  <!-- Background transparent -->
+  
+  <!-- Yarn ball above the 'i' (dusty pink #D4A0A0) -->
+  <circle cx="537" cy="150" r="38" fill="#D4A0A0"/>
+  <!-- Yarn texture lines on ball -->
+  <path d="M510 140 Q537 125 564 140 M507 150 Q537 135 567 150 M510 160 Q537 145 564 160" 
+        stroke="#C89090" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  
+  <!-- Thread from yarn ball (dusty pink) -->
+  <path d="M537 188 Q537 210 528 235 Q518 265 515 295 Q513 315 522 335 Q533 355 555 367" 
+        stroke="#D4A0A0" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  
+  <!-- "Arim" lettering - using the original serif font style (warm brown #5C4033) -->
+  <!-- This uses text with proper serif font to match the original -->
+  <text x="512" y="360" text-anchor="middle" 
+        font-family="'Playfair Display', Georgia, 'Times New Roman', serif" 
+        font-size="160" 
+        font-weight="500" 
+        fill="#5C4033" 
+        letter-spacing="-3">Arim</text>
+  
+  <!-- Decorative swash line with curl (dusty pink) -->
+  <path d="M300 385 Q420 370 540 385 Q660 395 750 380 Q780 375 785 390 Q790 405 770 408" 
+        stroke="#D4A0A0" stroke-width="4" fill="none" stroke-linecap="round"/>
+  
+  <!-- "YARN STUDIO" subtitle (dark brown #5C4033) -->
+  <text x="512" y="480" text-anchor="middle" 
+        font-family="Georgia, 'Times New Roman', serif" 
+        font-size="42" 
+        font-weight="400" 
+        fill="#5C4033" 
+        letter-spacing="16">YARN STUDIO</text>
+</svg>

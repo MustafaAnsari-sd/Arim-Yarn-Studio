@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
-const LOGO_SRC = '/images/logo-header.svg';
+const LOGO_SRC = '/images/logo-original.svg';
 
 function Header() {
   const [scrolled, setScrolled] = useState(false);
