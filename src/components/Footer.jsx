@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import siteConfig, { getWhatsAppUrl } from '../data/siteConfig';
 import { InstagramIcon, WhatsAppIcon } from './SocialIcons';
 
-const LOGO_SRC = '/images/logo.png';
+const LOGO_SRC = '/images/logo-header.svg';
 
 function Footer() {
   const year = new Date().getFullYear();

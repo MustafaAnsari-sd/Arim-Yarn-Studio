@@ -2,8 +2,6 @@ import { Link } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import products from '../data/products';
 
-const LOGO_SRC = '/images/logo.png';
-
 function Home() {
   // Show first 4 products as featured
   const featured = products.slice(0, 4);
@@ -16,7 +14,6 @@ function Home() {
         <span className="hero__decor hero__decor--right">🪡</span>
 
         <div className="hero__content">
-          <img src={LOGO_SRC} alt="Arim Yarn Studio" className="hero__logo-watermark" />
           <span className="hero__badge animate-fade-in">✦ Handmade in India</span>
           <h1 className="animate-fade-in-up">
             Crochet Creations<br />

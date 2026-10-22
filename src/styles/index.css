@@ -1587,16 +1587,6 @@ button {
   transform: rotate(12deg);
 }
 
-/* Hero brand logo watermark */
-.hero__logo-watermark {
-  /* Logo is wide (1600×923). Use width to control size. */
-  width: 260px;
-  height: auto;
-  margin: 0 auto var(--space-lg);
-  animation: fadeInUp 0.8s var(--ease-out) both;
-  mix-blend-mode: multiply;
-}
-
 
 /* ============================================================
    Features / USP Strip
@@ -2515,11 +2505,6 @@ button {
     min-height: 75vh;
   }
 
-  /* Hero logo on tablet */
-  .hero__logo-watermark {
-    width: 200px;
-  }
-
   .hero h1 {
     font-size: clamp(2rem, 7vw, 3rem);
   }
@@ -2587,11 +2572,6 @@ button {
 @media (max-width: 480px) {
   .hero {
     min-height: 70vh;
-  }
-
-  /* Hero logo smaller on small screens */
-  .hero__logo-watermark {
-    width: 180px;
   }
 
   /* Header - tighter spacing and smaller logo on small mobile */
