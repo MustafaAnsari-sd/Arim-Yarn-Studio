@@ -484,9 +484,8 @@ button {
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* Overlay backdrop - separate from menu */
-.mobile-menu::before {
-  content: '';
+/* Overlay backdrop - separate element BELOW menu */
+.mobile-menu-backdrop {
   position: fixed;
   top: 0;
   left: 0;
@@ -495,9 +494,10 @@ button {
   background: rgba(0, 0, 0, 0.5);
   z-index: 1900;
   pointer-events: auto;
+  animation: fadeIn 0.3s ease-out;
 }
 
-/* Mobile menu drawer */
+/* Mobile menu drawer - ABOVE backdrop */
 .mobile-menu {
   position: fixed;
   top: 0;
@@ -510,6 +510,7 @@ button {
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  pointer-events: auto;
   animation: slideInMenu 0.3s ease-out;
 }
 
