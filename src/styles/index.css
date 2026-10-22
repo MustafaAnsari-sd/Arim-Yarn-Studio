@@ -2467,6 +2467,11 @@ button {
     display: flex;
   }
 
+  /* Header logo LARGER on mobile for readability */
+  .header__logo-img {
+    width: 160px;
+  }
+
   .hero {
     min-height: 75vh;
   }
@@ -2507,6 +2512,7 @@ button {
 
   .contact-grid {
     grid-template-columns: 1fr;
+    gap: var(--space-2xl);
   }
 
   .footer__grid {
@@ -2523,6 +2529,11 @@ button {
   .section {
     padding: var(--space-3xl) 0;
   }
+
+  /* Mobile menu - reduce link font size to prevent overlap */
+  .mobile-menu__link {
+    font-size: 1.6rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -2532,6 +2543,11 @@ button {
 
   /* Hero logo smaller on small screens */
   .hero__logo-watermark {
+    width: 180px;
+  }
+
+  /* Header logo EXTRA LARGE on mobile for "Arim Yarn Studio" text readability */
+  .header__logo-img {
     width: 180px;
   }
 
@@ -2555,8 +2571,34 @@ button {
     align-items: stretch;
   }
 
-  .social-btn {
+  .contact-hero__actions .social-btn {
     width: 100%;
+  }
+
+  /* Contact page - center cards, full-width buttons */
+  .contact-grid {
+    gap: var(--space-xl);
+    text-align: center;
+  }
+
+  .contact-enquiry {
+    padding: var(--space-xl);
+  }
+
+  .channel-card {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .contact-info-card {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .delivery-areas-list {
+    justify-content: center;
   }
 
   .product-grid {
@@ -2627,9 +2669,18 @@ button {
     display: none;
   }
 
-  /* Mobile menu link size */
+  /* Mobile menu - reduce font size and add spacing to prevent overlap */
   .mobile-menu__link {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
+    padding: 0.3rem 0;
+  }
+
+  .mobile-menu__links {
+    gap: var(--space-md);
+  }
+
+  .mobile-menu__logo-img {
+    width: 160px;
   }
 
   /* Festive ribbon smaller text on mobile */
