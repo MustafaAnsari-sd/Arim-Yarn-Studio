@@ -21,35 +21,37 @@ function Header() {
   }, [menuOpen]);
 
   return (
-    <header className={`header${scrolled ? ' header--scrolled' : ''}`}>
-      <div className="header__inner">
-        <Link to="/" className="header__logo" onClick={handleNavClick}>
-          <img src={LOGO_SRC} alt="Arim Yarn Studio" className="header__logo-img" />
-        </Link>
+    <>
+      <header className={`header${scrolled ? ' header--scrolled' : ''}`}>
+        <div className="header__inner">
+          <Link to="/" className="header__logo" onClick={handleNavClick}>
+            <img src={LOGO_SRC} alt="Arim Yarn Studio" className="header__logo-img" />
+          </Link>
 
-        {/* Desktop navigation */}
-        <nav className="header__nav" id="desktop-nav">
-          <NavLink to="/" end>Home</NavLink>
-          <NavLink to="/shop">Shop</NavLink>
-          <NavLink to="/about">About</NavLink>
-          <NavLink to="/contact">Contact</NavLink>
-        </nav>
+          {/* Desktop navigation */}
+          <nav className="header__nav" id="desktop-nav">
+            <NavLink to="/" end>Home</NavLink>
+            <NavLink to="/shop">Shop</NavLink>
+            <NavLink to="/about">About</NavLink>
+            <NavLink to="/contact">Contact</NavLink>
+          </nav>
 
-        {/* Hamburger button */}
-        <button
-          className={`header__hamburger${menuOpen ? ' header__hamburger--open' : ''}`}
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
-          aria-expanded={menuOpen}
-          id="menu-toggle"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
+          {/* Hamburger button */}
+          <button
+            className={`header__hamburger${menuOpen ? ' header__hamburger--open' : ''}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+            aria-expanded={menuOpen}
+            id="menu-toggle"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </header>
 
-      {/* Mobile menu overlay */}
+      {/* Mobile menu overlay - OUTSIDE header */}
       {menuOpen && (
         <nav className="mobile-menu mobile-menu--open" id="mobile-menu">
           <Link to="/" className="mobile-menu__logo-link" onClick={handleNavClick}>
@@ -66,7 +68,7 @@ function Header() {
           </div>
         </nav>
       )}
-    </header>
+    </>
   );
 }
 
