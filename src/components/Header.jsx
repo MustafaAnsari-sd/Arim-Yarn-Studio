@@ -50,15 +50,22 @@ function Header() {
       </div>
 
       {/* Mobile menu overlay */}
-      <nav className={`mobile-menu${menuOpen ? ' mobile-menu--open' : ''}`} id="mobile-menu">
-        <div className="mobile-menu__logo">
-          <img src={LOGO_SRC} alt="Arim Yarn Studio" className="mobile-menu__logo-img" />
-        </div>
-        <NavLink to="/" end onClick={handleNavClick}>Home</NavLink>
-        <NavLink to="/shop" onClick={handleNavClick}>Shop</NavLink>
-        <NavLink to="/about" onClick={handleNavClick}>About</NavLink>
-        <NavLink to="/contact" onClick={handleNavClick}>Contact</NavLink>
-      </nav>
+      {menuOpen && (
+        <nav className="mobile-menu mobile-menu--open" id="mobile-menu">
+          <Link to="/" className="mobile-menu__logo-link" onClick={handleNavClick}>
+            <img src={LOGO_SRC} alt="Arim Yarn Studio" className="mobile-menu__logo-img" />
+          </Link>
+          <div className="mobile-menu__links">
+            <NavLink to="/" end onClick={handleNavClick} className="mobile-menu__link">Home</NavLink>
+            <NavLink to="/shop" onClick={handleNavClick} className="mobile-menu__link">Shop</NavLink>
+            <NavLink to="/about" onClick={handleNavClick} className="mobile-menu__link">About</NavLink>
+            <NavLink to="/contact" onClick={handleNavClick} className="mobile-menu__link">Contact</NavLink>
+          </div>
+          <div className="mobile-menu__footer">
+            <span>✦ Handmade in India</span>
+          </div>
+        </nav>
+      )}
     </header>
   );
 }

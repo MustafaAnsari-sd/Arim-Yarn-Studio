@@ -485,47 +485,64 @@ button {
 
 /* Mobile menu overlay */
 .mobile-menu {
-  display: none;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 999;
-  background-color: rgba(250, 247, 242, 0.98);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background-color: rgba(253, 248, 243, 0.98);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: var(--space-xl);
-}
-
-.mobile-menu--open {
+  /* always use flex — toggled by conditional render */
   display: flex;
+  animation: fadeIn 0.25s var(--ease-out) both;
 }
 
-.mobile-menu a {
+.mobile-menu__logo-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-sm);
+}
+
+.mobile-menu__links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.mobile-menu__link {
   font-family: var(--font-heading);
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: var(--color-chocolate);
-  opacity: 0;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: color var(--transition-fast);
   animation: fadeInUp 0.4s var(--ease-out) both;
 }
 
-.mobile-menu a:nth-child(1) { animation-delay: 0.05s; }
-.mobile-menu a:nth-child(2) { animation-delay: 0.1s; }
-.mobile-menu a:nth-child(3) { animation-delay: 0.15s; }
-.mobile-menu a:nth-child(4) { animation-delay: 0.2s; }
+.mobile-menu__link:nth-child(1) { animation-delay: 0.05s; }
+.mobile-menu__link:nth-child(2) { animation-delay: 0.12s; }
+.mobile-menu__link:nth-child(3) { animation-delay: 0.19s; }
+.mobile-menu__link:nth-child(4) { animation-delay: 0.26s; }
 
-.mobile-menu a:hover,
-.mobile-menu a.active {
+.mobile-menu__link:hover,
+.mobile-menu__link.active {
   color: var(--color-dusty-pink);
 }
 
-/* Mobile menu logo */
-.mobile-menu__logo {
-  margin-bottom: var(--space-lg);
+.mobile-menu__footer {
+  margin-top: var(--space-lg);
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
 }
 
 .mobile-menu__logo-img {
@@ -2454,6 +2471,11 @@ button {
     min-height: 75vh;
   }
 
+  /* Hero logo on tablet */
+  .hero__logo-watermark {
+    width: 200px;
+  }
+
   .hero h1 {
     font-size: clamp(2rem, 7vw, 3rem);
   }
@@ -2508,9 +2530,24 @@ button {
     min-height: 70vh;
   }
 
+  /* Hero logo smaller on small screens */
+  .hero__logo-watermark {
+    width: 180px;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.8rem, 8vw, 2.4rem);
+  }
+
   .hero__actions {
     flex-direction: column;
     align-items: center;
+    width: 100%;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+    max-width: 280px;
   }
 
   .contact-hero__actions {
@@ -2528,5 +2565,80 @@ button {
 
   .features-strip__grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Shop mobile */
+  .shop-hero h1 {
+    font-size: clamp(1.8rem, 8vw, 2.4rem);
+  }
+
+  .shop-hero__price-highlight {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+  }
+
+  .shop-hero__price-note {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .shop-hero__badges {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .shop-filters {
+    gap: 0.35rem;
+  }
+
+  .shop-filter-btn {
+    padding: 0.5em 0.9em;
+    font-size: 0.78rem;
+  }
+
+  .product-grid--shop {
+    grid-template-columns: 1fr;
+  }
+
+  .shop-cta__card {
+    padding: var(--space-lg);
+  }
+
+  /* About mobile */
+  .about-story__stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .about-highlights-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-values-new {
+    grid-template-columns: 1fr;
+  }
+
+  .about-process__steps {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .about-process__step-arrow {
+    display: none;
+  }
+
+  /* Mobile menu link size */
+  .mobile-menu__link {
+    font-size: 1.7rem;
+  }
+
+  /* Festive ribbon smaller text on mobile */
+  .festive-ribbon {
+    font-size: 0.75rem;
+  }
+
+  /* Footer logo */
+  .footer__logo-img {
+    width: 110px;
   }
 }
