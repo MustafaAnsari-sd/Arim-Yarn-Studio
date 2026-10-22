@@ -486,7 +486,7 @@ button {
 /* Mobile menu overlay */
 .mobile-menu {
   position: fixed;
-  top: 0;
+  top: var(--header-height);
   left: 0;
   right: 0;
   bottom: 0;
@@ -496,35 +496,57 @@ button {
   -webkit-backdrop-filter: blur(24px);
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: var(--space-xl);
+  justify-content: flex-start;
+  padding-top: var(--space-3xl);
   /* always use flex — toggled by conditional render */
   display: flex;
   animation: fadeIn 0.25s var(--ease-out) both;
+  overflow-y: auto;
 }
 
 .mobile-menu__logo-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: var(--space-sm);
+  display: none; /* Hide logo in mobile menu since it's in header */
 }
 
 .mobile-menu__links {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-lg);
+  gap: var(--space-xl);
+  width: 100%;
+  padding: 0 var(--space-lg);
 }
 
 .mobile-menu__link {
   font-family: var(--font-heading);
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: var(--color-chocolate);
   text-decoration: none;
   letter-spacing: 0.02em;
-  transition: color var(--transition-fast);
+  transition: all var(--transition-fast);
   animation: fadeInUp 0.4s var(--ease-out) both;
+  padding: var(--space-sm) 0;
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.mobile-menu__link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: var(--color-dusty-pink);
+  border-radius: 1px;
+  transition: width var(--transition-base);
+}
+
+.mobile-menu__link:hover::after,
+.mobile-menu__link.active::after {
+  width: 80px;
 }
 
 .mobile-menu__link:nth-child(1) { animation-delay: 0.05s; }
@@ -538,7 +560,8 @@ button {
 }
 
 .mobile-menu__footer {
-  margin-top: var(--space-lg);
+  margin-top: auto;
+  padding: var(--space-lg) 0;
   font-size: 0.82rem;
   letter-spacing: 0.1em;
   color: var(--color-text-muted);
@@ -546,7 +569,7 @@ button {
 }
 
 .mobile-menu__logo-img {
-  width: 180px;
+  width: 120px;
   height: auto;
   object-fit: contain;
   mix-blend-mode: multiply;
@@ -2467,9 +2490,9 @@ button {
     display: flex;
   }
 
-  /* Header logo LARGER on mobile for readability */
+  /* Header logo optimal size on tablet */
   .header__logo-img {
-    width: 160px;
+    width: 140px;
   }
 
   .hero {
@@ -2530,7 +2553,7 @@ button {
     padding: var(--space-3xl) 0;
   }
 
-  /* Mobile menu - reduce link font size to prevent overlap */
+  /* Mobile menu - cleaner spacing */
   .mobile-menu__link {
     font-size: 1.6rem;
   }
@@ -2546,9 +2569,9 @@ button {
     width: 180px;
   }
 
-  /* Header logo EXTRA LARGE on mobile for "Arim Yarn Studio" text readability */
+  /* Header logo optimal size on small mobile - readable but not huge */
   .header__logo-img {
-    width: 180px;
+    width: 120px;
   }
 
   .hero h1 {
@@ -2669,18 +2692,18 @@ button {
     display: none;
   }
 
-  /* Mobile menu - reduce font size and add spacing to prevent overlap */
+  /* Mobile menu - clean professional spacing */
+  .mobile-menu {
+    padding-top: var(--space-2xl);
+  }
+
   .mobile-menu__link {
-    font-size: 1.5rem;
-    padding: 0.3rem 0;
+    font-size: 1.4rem;
+    padding: var(--space-sm) 0;
   }
 
   .mobile-menu__links {
-    gap: var(--space-md);
-  }
-
-  .mobile-menu__logo-img {
-    width: 160px;
+    gap: var(--space-lg);
   }
 
   /* Festive ribbon smaller text on mobile */
