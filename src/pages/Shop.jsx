@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useRef, useEffect } from 'react';
 import siteConfig, { getWhatsAppUrl } from '../data/siteConfig';
 import ProductCard from '../components/ProductCard';
 import products, { CATEGORIES } from '../data/products';
@@ -14,10 +14,49 @@ const CATEGORY_META = {
 
 function Shop() {
   const [activeCategory, setActiveCategory] = useState('All');
+  const productsSectionRef = useRef(null);
+  const filtersBarRef = useRef(null);
+  const isFirstRender = useRef(true);
 
   const filtered = useMemo(() => {
     if (activeCategory === 'All') return products;
     return products.filter((p) => p.category === activeCategory);
+  }, [activeCategory]);
+
+  const handleCategoryChange = (cat) => {
+    if (cat === activeCategory) return;
+    setActiveCategory(cat);
+  };
+
+  useEffect(() => {
+    // Skip scroll on initial component mount so page loads naturally at the top
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+
+    // Scroll after category update and product re-render
+    // Use setTimeout to ensure DOM has fully updated after state change
+    const scrollTimer = setTimeout(() => {
+      if (!productsSectionRef.current) return;
+
+      const header = document.querySelector('.header');
+      const headerHeight = header ? header.getBoundingClientRect().height : 80;
+      const filtersBar = filtersBarRef.current;
+      const filtersBarHeight = filtersBar ? filtersBar.getBoundingClientRect().height : 0;
+      const totalStickyOffset = headerHeight + filtersBarHeight + 16; // +16px for breathing room
+
+      const sectionTop = productsSectionRef.current.getBoundingClientRect().top + window.scrollY;
+      const targetScrollY = Math.max(0, sectionTop - totalStickyOffset);
+
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({
+        top: targetScrollY,
+        behavior: prefersReducedMotion ? 'auto' : 'smooth',
+      });
+    }, 0);
+
+    return () => clearTimeout(scrollTimer);
   }, [activeCategory]);
 
   const customOrderUrl = getWhatsAppUrl(
@@ -85,7 +124,7 @@ function Shop() {
       </section>
 
       {/* ── Category Filters ── */}
-      <div className="shop-filters-bar" id="shop-filters">
+      <div className="shop-filters-bar" id="shop-filters" ref={filtersBarRef}>
         <div className="container">
           <div className="shop-filters">
             {CATEGORIES.map((cat) => {
@@ -98,7 +137,7 @@ function Shop() {
                 <button
                   key={cat}
                   className={`shop-filter-btn${isActive ? ' shop-filter-btn--active' : ''}`}
-                  onClick={() => setActiveCategory(cat)}
+                  onClick={() => handleCategoryChange(cat)}
                 >
                   <span className="shop-filter-btn__icon">{meta.icon}</span>
                   <span className="shop-filter-btn__label">{cat}</span>
@@ -111,7 +150,7 @@ function Shop() {
       </div>
 
       {/* ── Products Grid ── */}
-      <section className="section shop-products" id="shop-products">
+      <section className="section shop-products" id="shop-products" ref={productsSectionRef}>
         <div className="container">
 
           {/* Results bar */}

@@ -579,12 +579,6 @@ button {
   margin-top: auto;
   flex-shrink: 0;
 }
-  color: var(--color-text-muted);
-  text-transform: uppercase;
-  text-align: center;
-  border-top: 1px solid var(--color-border-light);
-  flex-shrink: 0;
-}
 
 /* Main content offset */
 .main {
@@ -1055,6 +1049,7 @@ button {
    ============================================================ */
 .shop-products {
   padding-top: var(--space-2xl);
+  scroll-margin-top: calc(var(--header-height) + 80px);
 }
 
 .shop-results-bar {
