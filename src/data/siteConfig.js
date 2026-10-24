@@ -21,8 +21,8 @@ const siteConfig = {
   },
 
   instagram: {
-    handle: 'arim_yarn_studio2163',
-    url: 'https://www.instagram.com/arim_yarn_studio2163',
+    handle: 'arimyarnstudio',
+    url: 'https://www.instagram.com/arimyarnstudio/',
   },
 
   deliveryAreas: [

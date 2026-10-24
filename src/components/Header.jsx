@@ -32,8 +32,8 @@ function Header() {
           <nav className="header__nav" id="desktop-nav">
             <NavLink to="/" end>Home</NavLink>
             <NavLink to="/shop">Shop</NavLink>
-            <NavLink to="/about">About</NavLink>
-            <NavLink to="/contact">Contact</NavLink>
+            <NavLink to="/about">About Us</NavLink>
+            <NavLink to="/contact">Contact Us</NavLink>
           </nav>
 
           {/* Hamburger button */}
@@ -65,8 +65,8 @@ function Header() {
             <div className="mobile-menu__links">
               <NavLink to="/" end onClick={handleNavClick} className="mobile-menu__link">Home</NavLink>
               <NavLink to="/shop" onClick={handleNavClick} className="mobile-menu__link">Shop</NavLink>
-              <NavLink to="/about" onClick={handleNavClick} className="mobile-menu__link">About</NavLink>
-              <NavLink to="/contact" onClick={handleNavClick} className="mobile-menu__link">Contact</NavLink>
+              <NavLink to="/about" onClick={handleNavClick} className="mobile-menu__link">About Us</NavLink>
+              <NavLink to="/contact" onClick={handleNavClick} className="mobile-menu__link">Contact Us</NavLink>
             </div>
             <div className="mobile-menu__footer">
               <span>✦ Handmade in India ✦</span>

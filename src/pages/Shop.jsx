@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { getWhatsAppUrl } from '../data/siteConfig';
+import siteConfig, { getWhatsAppUrl } from '../data/siteConfig';
 import ProductCard from '../components/ProductCard';
 import products, { CATEGORIES } from '../data/products';
 
@@ -169,7 +169,7 @@ function Shop() {
                 </p>
                 <div className="shop-more-coming__actions">
                   <a
-                    href="https://www.instagram.com/arim_yarn_studio2163"
+                    href={siteConfig.instagram.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn btn--primary"
